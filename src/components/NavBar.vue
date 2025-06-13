@@ -45,39 +45,39 @@ const toggleDark = useToggle(isDark);
       <hr class="hidden md:flex border border-gray-400/50" />
       <nav class="grid grid-cols-3 md:grid-cols-2 gap-2 text-center md:mt-4 ">
         <RouterLink to="/"
-          class="h-10 md:h-20 bg-green-400/50 hover:bg-green-600/50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:text-white/80 text-sm font-medium rounded-xl flex flex-col items-center justify-center transition">
+          class="h-10 md:h-20 bg-green-400/50 hover:bg-green-600/50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:text-white/80 font-medium rounded-xl flex flex-col items-center justify-center transition">
           <i class="fa-solid fa-house text-green-800 dark:text-green-500 text-base md:text-4xl"></i>
-          <span class="text-[7px]/3 font-bold md:text-sm">Home</span>
+          <span class="text-[7px] font-bold md:text-sm">Home</span>
         </RouterLink>
         <RouterLink to="/about"
-          class="h-10 md:h-20 bg-green-400/50 hover:bg-green-600/50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:text-white/80 text-sm font-medium rounded-xl flex flex-col items-center justify-center transition">
+          class="h-10 md:h-20 bg-green-400/50 hover:bg-green-600/50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:text-white/80 font-medium rounded-xl flex flex-col items-center justify-center transition">
           <i class="fa-solid fa-user text-base md:text-4xl"></i>
-          <span class="text-[7px]/3 md:text-sm">About</span>
+          <span class="text-[7px] md:text-sm">About</span>
         </RouterLink>
         <RouterLink to="/skill"
-          class="h-10 md:h-20 bg-green-400/50 hover:bg-green-600/50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:text-white/80 text-sm font-medium rounded-xl flex flex-col items-center justify-center transition">
+          class="h-10 md:h-20 bg-green-400/50 hover:bg-green-600/50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:text-white/80 font-medium rounded-xl flex flex-col items-center justify-center transition">
           <i class="fa-solid fa-pen-nib text-base md:text-4xl"></i>
-          <span class="text-[7px]/3 md:text-sm">Skills</span>
+          <span class="text-[7px] md:text-sm">Skills</span>
         </RouterLink>
         <RouterLink to="/project"
-          class="h-10 md:h-20 bg-green-400/50 hover:bg-green-600/50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:text-white/80 text-sm font-medium rounded-xl flex flex-col items-center justify-center transition">
+          class="h-10 md:h-20 bg-green-400/50 hover:bg-green-600/50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:text-white/80 font-medium rounded-xl flex flex-col items-center justify-center transition">
           <i class="fa-solid fa-list-check text-base md:text-4xl"></i>
-          <span class="text-[7px]/3 md:text-sm">Projects</span>
+          <span class="text-[7px] md:text-sm">Projects</span>
         </RouterLink>
         <RouterLink to="/contact"
-          class="h-10 md:h-20 bg-green-400/50 hover:bg-green-600/50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:text-white/80 text-sm font-medium rounded-xl flex flex-col items-center justify-center transition">
+          class="h-10 md:h-20 bg-green-400/50 hover:bg-green-600/50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:text-white/80 font-medium rounded-xl flex flex-col items-center justify-center transition">
           <i class="fa-solid fa-envelope text-base md:text-4xl"></i>
-          <span class="text-[7px]/3 md:text-sm">Contact</span>
+          <span class="text-[7px] md:text-sm">Contact</span>
         </RouterLink>
         <button @click="toggleDark()"
-          class="h-10 md:h-20 bg-green-400/50 hover:bg-green-600/50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:text-white/80 text-sm font-medium rounded-xl flex flex-col items-center justify-center transition">
+          class="h-10 md:h-20 bg-green-400/50 hover:bg-green-600/50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:text-white/80 font-medium rounded-xl flex flex-col items-center justify-center transition">
           <span class="text-base md:text-4xl">
             {{ isDark ? "🌜" : "🔆" }}
           </span>
         </button>
         <div class="h-10 md:h-20 relative group">
           <button
-            class="h-full w-full bg-green-400/50 hover:bg-green-600/50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:text-white/80 text-sm font-medium rounded-xl flex flex-col items-center justify-center transition">
+            class="h-full w-full bg-green-400/50 hover:bg-green-600/50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:text-white/80 font-medium rounded-xl flex flex-col items-center justify-center transition">
             <i class="fa-solid fa-language text-base md:text-4xl"></i>
           </button>
           <div
