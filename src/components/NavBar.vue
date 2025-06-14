@@ -43,7 +43,7 @@ const toggleDark = useToggle(isDark);
         </div>
       </div>
       <hr class="hidden md:flex border border-gray-400/50" />
-      <nav class="grid grid-cols-5 md:grid-cols-2 gap-2 text-center md:mt-4 ">
+      <nav class="grid grid-cols-7 md:grid-cols-2 gap-2 text-center md:mt-4 ">
         <RouterLink to="/"
           class="h-14 md:h-20 bg-green-400/50 hover:bg-green-600/50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:text-white/80 font-medium rounded-xl flex flex-col items-center justify-center transition">
           <i class="fa-solid fa-house text-green-800 dark:text-green-500 text-base md:text-4xl"></i>
