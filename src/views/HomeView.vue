@@ -12,7 +12,7 @@
         <div class="md:w-1/2 text-center md:text-left">
           <h1 class="text-4xl md:text-5xl font-bold text-gray-800 dark:text-gray-200 mb-2 uppercase">Chan Vannak</h1>
           <h2 class="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-6 font-medium">IT Support and Graphic Design</h2>
-          <p class="text-gray-300 dark:text-gray-300 mb-8 max-w-lg mx-auto md:mx-0 font-light">
+          <p class="text-gray-800 dark:text-gray-300 mb-8 max-w-lg mx-auto md:mx-0 font-light">
             Bridging technology and creativity to deliver seamless digital experiences and robust IT solutions.
           </p>
           <div class="grid grid-cols-2 lg:grid-cols-3 gap-4">
