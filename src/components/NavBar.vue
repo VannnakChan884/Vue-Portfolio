@@ -7,7 +7,7 @@ const toggleDark = useToggle(isDark);
 
 <template>
   <header
-    class="w-full md:h-[91vh] md:w-1/4 lg:w-1/5 xl:w-1/6 backdrop-blur-sm bg-white/70 dark:bg-gray-800 fixed top-0 md:top-6 left-0 md:left-6 p-3 md:p-4 z-50 shadow-lg md:shadow-xl rounded-xl md:rounded-2xl">
+    class="w-full md:h-[91vh] md:w-1/4 lg:w-1/4 xl:w-1/5 backdrop-blur-sm bg-white/70 dark:bg-gray-800 fixed top-0 md:top-6 left-0 md:left-6 p-3 md:p-4 z-50 shadow-lg md:shadow-xl md:rounded-2xl">
     <div class="flex flex-col">
       <div class="hidden md:flex">
         <div class="w-full mx-auto">
@@ -17,32 +17,12 @@ const toggleDark = useToggle(isDark);
             </div>
             <div class="text-center">
               <h1 class="text-xl md:text-xl text-gray-700 dark:text-white/80 font-bold mt-2 uppercase mb-1">Chan Vannak</h1>
-              <h2 class="text-sm text-gray-500 dark:text-white/70 mb-1">IT Support and Graphic
-                Design
-              </h2>
-              <p class="mb-2 text-gray-500 dark:text-white/70 text-xs text-justify">
-                Bridging technology and creativity to deliver seamless digital experiences and robust IT solutions.
-              </p>
-              <div class="grid grid-cols-2 gap-2 mb-4">
-                <RouterLink to="/project"
-                  class="flex items-center justify-center bg-orange-500 hover:bg-orange-600 dark:bg-blue-500 dark:hover:bg-blue-600 text-xs text-white text-center p-1 rounded-md transition">
-                  View Work
-                </RouterLink>
-
-                <button id="downloadResume"
-                  class="bg-green-500 hover:bg-green-600 text-white py-1 text-xs rounded-md flex items-center justify-center transition">
-                  <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
-                  </svg>
-                  Resume
-                </button>
-              </div>
+              <h2 class="text-xs text-gray-500 dark:text-white/70 mb-2">IT Support & Graphic Design</h2>
             </div>
           </div>
         </div>
       </div>
-      <hr class="hidden md:flex border border-gray-400/50" />
+      <hr class="hidden md:flex border border-gray-400/50 mt-2">
       <nav class="grid grid-cols-7 md:grid-cols-2 gap-2 text-center md:mt-4 ">
         <RouterLink to="/"
           class="h-14 md:h-20 bg-green-400/50 hover:bg-green-600/50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:text-white/80 font-medium rounded-xl flex flex-col items-center justify-center transition">
