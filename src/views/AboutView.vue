@@ -1,8 +1,8 @@
 <template>
   <!-- About Section -->
   <div
-    class="absolute top-0 right-0 pt-4 px-6 pb-24 w-full md:w-3/4 lg:w-4/5 xl:5/6 bg-white dark:bg-gray-900">
-    <div class="md:ml-6 lg:ml-6 xl:ml-0">
+    class="absolute top-0 right-0 pt-4 px-6 pb-24 w-full md:w-3/4 lg:w-4/5 xl:w-5/6 bg-white dark:bg-gray-900">
+    <div class="md:ml-6 lg:ml-6 xl:ml-6">
       <h2 class="text-gray-800 dark:text-gray-200 text-3xl font-bold text-center uppercase mb-8">About</h2>
       <div class="flex flex-col md:flex-row">
         <!-- Education & Career -->

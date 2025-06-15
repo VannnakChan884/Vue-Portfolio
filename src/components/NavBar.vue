@@ -7,8 +7,8 @@ const toggleDark = useToggle(isDark);
 
 <template>
   <header
-    class="w-full md:h-[95vh] md:w-1/4 lg:w-1/5 xl:w-1/6 fixed bottom-0 md:top-6 left-0 md:left-6 md:p-4 z-50 md:rounded-2xl">
-    <div class="p-2 m-auto flex flex-col backdrop-blur-sm bg-gray-200/70 dark:bg-gray-800/70 rounded-t-2xl shadow-xl shadow-gray-800/30 md:shadow-2xl">
+    class="w-full md:w-1/4 lg:w-1/5 xl:w-1/6 fixed bottom-0 md:top-6 left-0 md:left-6 md:p-4 z-50">
+    <div class="h-full p-2 flex flex-col backdrop-blur-sm bg-gray-200/70 dark:bg-gray-800/70 rounded-t-2xl shadow-xl shadow-gray-800/30 md:rounded-b-2xl">
       <div class="hidden md:flex">
         <div class="w-full mx-auto">
           <div class="flex flex-col">

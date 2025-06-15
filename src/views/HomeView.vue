@@ -1,6 +1,6 @@
 <template>
   <!-- Hero Section -->
-  <div id="home" class="absolute top-0 right-0 py-28 w-full md:w-3/4 lg:w-4/5 xl:5/6 md:h-[100vh] bg-white dark:bg-gray-900 px-6 flex items-center justify-center">
+  <div class="absolute right-0 w-full md:w-3/4 lg:w-4/5 xl:w-5/6 h-[92vh] md:h-[100vh] px-6 flex items-center justify-center bg-white dark:bg-gray-900">
     <div class="md:ml-4 lg:ml-6 xl:ml-0">
       <div class="flex flex-col md:flex-row items-center">
         <div class="md:w-1/2 mb-8 md:mb-0 flex justify-center">
