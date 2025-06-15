@@ -1,11 +1,11 @@
 <template>
     <!-- Projects Section -->
-    <div class="w-full md:w-2/3 lg:w-3/4 xl:5/6 absolute top-0 right-0 py-28 px-6 bg-white dark:bg-gray-900">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-200 uppercase text-center mb-12">
+    <div class="w-full md:w-2/3 lg:w-3/4 xl:5/6 absolute top-0 right-0 pt-4 px-6 bg-white dark:bg-gray-900">
+        <div class="md:ml-6 lg:ml-6 xl:ml-0">
+            <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-200 uppercase text-center mb-6">
                 projects_title
             </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 <div class="project-card bg-gray-200 dark:bg-gray-700 rounded-lg overflow-hidden shadow-md">
                     <div class="md:h-56 overflow-hidden">
                         <img src="../assets/avatar.jpg" alt="project title"

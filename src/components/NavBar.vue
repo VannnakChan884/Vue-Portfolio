@@ -7,7 +7,7 @@ const toggleDark = useToggle(isDark);
 
 <template>
   <header
-    class="w-full md:h-[95vh] md:w-1/4 lg:w-1/5 xl:w-1/6 backdrop-blur-sm bg-white/70 dark:bg-gray-800 fixed top-0 md:top-6 left-0 md:left-6 p-3 md:p-4 z-50 shadow-lg md:shadow-xl md:rounded-2xl">
+    class="w-full md:h-[95vh] md:w-1/4 lg:w-1/5 xl:w-1/6 backdrop-blur-sm bg-white/70 dark:bg-gray-800 fixed bottom-0 md:top-6 left-0 md:left-6 p-3 md:p-4 z-50 shadow-lg shadow-gray-800 md:shadow-xl md:rounded-2xl">
     <div class="flex flex-col">
       <div class="hidden md:flex">
         <div class="w-full mx-auto">
@@ -61,7 +61,7 @@ const toggleDark = useToggle(isDark);
             <i class="fa-solid fa-language text-base md:text-4xl"></i>
           </button>
           <div
-            class="absolute right-0 md:right-[-56%] md:top-0 w-24 bg-white dark:bg-gray-800 dark:text-gray-200 rounded-lg overflow-hidden shadow-lg py-0 z-10 invisible group-hover:visible opacity-0 group-hover:opacity-100 transition">
+            class="absolute right-0 -top-24 md:top-20 md:left-0 w-24 bg-white dark:bg-gray-800 dark:text-gray-200 rounded-lg overflow-hidden shadow-lg py-0 z-10 invisible group-hover:visible opacity-0 group-hover:opacity-100 transition">
             <a href="?lang=en" class="block w-full text-left px-4 py-1 dark:hover:bg-gray-700 hover:bg-gray-200">English</a>
             <a href="?lang=kh" class="block w-full text-left px-4 py-1 dark:hover:bg-gray-700 hover:bg-gray-200">ខ្មែរ</a>
             <a href="?lang=zh" class="block w-full text-left px-4 py-1 dark:hover:bg-gray-700 hover:bg-gray-200">中国</a>
