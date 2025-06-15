@@ -1,18 +1,18 @@
 <template>
   <!-- Hero Section -->
-  <section id="home" class="h-[100vh] bg-white dark:bg-gray-900 flex items-center justify-center">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div id="home" class="absolute top-0 right-0 py-28 w-full md:w-3/4 lg:w-4/5 xl:5/6 md:h-[100vh] bg-white dark:bg-gray-900 px-6 flex items-center justify-center">
+    <div class="md:ml-4 lg:ml-6 xl:ml-0">
       <div class="flex flex-col md:flex-row items-center">
         <div class="md:w-1/2 mb-8 md:mb-0 flex justify-center">
           <div
-            class="w-48 h-48 md:w-64 md:h-64 rounded-3xl overflow-hidden border-4 border-gray-300 dark:border-gray-800 shadow-lg">
+            class="w-4/5 h-4/5 md:w-64 md:h-64 rounded-3xl overflow-hidden border-4 border-gray-300 dark:border-gray-800 shadow-lg">
             <img src="../assets/avatar.jpg" alt="Vannak's Profile Photo" class="w-full h-full object-cover">
           </div>
         </div>
         <div class="md:w-1/2 text-center md:text-left">
-          <h1 class="text-4xl md:text-5xl font-bold text-gray-800 dark:text-gray-200 mb-2 uppercase">Chan Vannak</h1>
-          <h2 class="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-6 font-medium">IT Support and Graphic Design</h2>
-          <p class="text-gray-800 dark:text-gray-300 mb-8 max-w-lg mx-auto md:mx-0 font-light">
+          <h1 class="text-4xl lg:text-5xl font-bold text-gray-800 dark:text-gray-200 mb-1 uppercase">Chan Vannak</h1>
+          <h2 class="text-lg lg:text-2xl text-gray-700 dark:text-gray-300 mb-2 font-medium">IT Support and Graphic Design</h2>
+          <p class="text-gray-800 dark:text-gray-300 mb-4 max-w-lg mx-auto md:mx-0 font-light text-justify">
             Bridging technology and creativity to deliver seamless digital experiences and robust IT solutions.
           </p>
           <div class="grid grid-cols-2 lg:grid-cols-3 gap-4">
@@ -29,5 +29,5 @@
         </div>
       </div>
     </div>
-  </section>
+  </div>
 </template>
