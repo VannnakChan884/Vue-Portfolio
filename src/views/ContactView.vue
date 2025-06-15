@@ -1,7 +1,7 @@
 <template>
     <!-- Contact Section -->
     <div
-        class="absolute top-0 right-0 py-28 px-6 w-full md:w-3/4 lg:w-4/5 xl:5/6 bg-white dark:bg-gray-900">
+        class="absolute top-0 right-0 pt-4 px-6 w-full md:w-3/4 lg:w-4/5 xl:5/6 bg-white dark:bg-gray-900">
         <div class="md:ml-6 lg:ml-6 xl:ml-0">
             <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-200 text-center mb-12 uppercase">
                 contact_title
