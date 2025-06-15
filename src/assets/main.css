@@ -3,12 +3,11 @@
 @tailwind utilities;
 
 /* @import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Sawarabi+Mincho&display=swap'); */
-* {
-    box-sizing: border-box;
-}
+
 body {
     font-family: 'Nunito Sans', 'Kantumruy Pro', 'Sawarabi Mincho', sans-serif;
     scroll-behavior: smooth;
+    box-sizing: border-box;
 }
 
 .hero-pattern {
@@ -36,4 +35,22 @@ body {
 
 .dark ::-webkit-scrollbar-thumb {
     background: #2C5282;
+}
+
+.btn {
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project-card {
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
 }

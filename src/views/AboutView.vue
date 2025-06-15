@@ -1,11 +1,13 @@
 <template>
   <!-- About Section -->
-    <div class="w-full md:w-2/3 lg:w-3/4 xl:5/6 md:bg-orange-500 lg:bg-blue-500 xl:bg-red-500 bg-white dark:bg-gray-800 absolute top-0 right-0 py-28 px-6">
+  <div
+    class="absolute top-0 right-0 py-28 px-6 w-full md:w-3/4 lg:w-4/5 xl:5/6 bg-white dark:bg-gray-900">
+    <div class="md:ml-6 lg:ml-6 xl:ml-0">
       <h2 class="text-gray-800 dark:text-gray-200 text-3xl font-bold text-center uppercase mb-8">About</h2>
       <div class="flex flex-col md:flex-row">
         <!-- Education & Career -->
         <div class="md:w-1/2 mb-8 md:mb-0">
-          <h3 class="text-xl dark:text-gray-200 font-semibold  mb-4">Education & Career</h3>
+          <h3 class="text-xl dark:text-gray-200 font-semibold mb-4">Education & Career</h3>
           <ul class="space-y-4 text-justify text-gray-700">
             <li class="flex items-start">
               <i class="fa-solid fa-graduation-cap dark:text-gray-200 mt-1 mr-3"></i>
@@ -20,7 +22,8 @@
                 <h4 class="font-medium dark:text-gray-200">
                   experience_one
                 </h4>
-                <p class="font-light dark:text-gray-300">Provide design services for posters, logos, stickers, packaging... to customers.
+                <p class="font-light dark:text-gray-300">Provide design services for posters, logos, stickers,
+                  packaging... to customers.
                 </p>
               </div>
             </li>
@@ -73,4 +76,5 @@
         </div>
       </div>
     </div>
+  </div>
 </template>

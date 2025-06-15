@@ -7,7 +7,7 @@ const toggleDark = useToggle(isDark);
 
 <template>
   <header
-    class="w-full md:h-[91vh] md:w-1/4 lg:w-1/4 xl:w-1/5 backdrop-blur-sm bg-white/70 dark:bg-gray-800 fixed top-0 md:top-6 left-0 md:left-6 p-3 md:p-4 z-50 shadow-lg md:shadow-xl md:rounded-2xl">
+    class="w-full md:h-[91vh] md:w-1/4 lg:w-1/5 xl:w-1/6 backdrop-blur-sm bg-white/70 dark:bg-gray-800 fixed top-0 md:top-6 left-0 md:left-6 p-3 md:p-4 z-50 shadow-lg md:shadow-xl md:rounded-2xl">
     <div class="flex flex-col">
       <div class="hidden md:flex">
         <div class="w-full mx-auto">
@@ -23,7 +23,7 @@ const toggleDark = useToggle(isDark);
         </div>
       </div>
       <hr class="hidden md:flex border border-gray-400/50 mt-2">
-      <nav class="grid grid-cols-7 md:grid-cols-2 gap-2 text-center md:mt-4 ">
+      <nav class="grid grid-cols-7 md:grid-cols-2 xl:grid-cols-3 gap-2 text-center md:mt-4 ">
         <RouterLink to="/"
           class="h-14 md:h-20 bg-green-400/50 hover:bg-green-600/50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:text-white/80 font-medium rounded-xl flex flex-col items-center justify-center transition">
           <i class="fa-solid fa-house text-green-800 dark:text-green-500 text-base md:text-4xl"></i>
@@ -61,10 +61,10 @@ const toggleDark = useToggle(isDark);
             <i class="fa-solid fa-language text-base md:text-4xl"></i>
           </button>
           <div
-            class="absolute right-0 left-0 w-20 bg-white rounded-lg overflow-hidden shadow-lg py-0 z-10 invisible group-hover:visible opacity-0 group-hover:opacity-100 transition">
-            <a href="?lang=en" class="block w-full text-left px-4 py-1 hover:bg-gray-100">English</a>
-            <a href="?lang=kh" class="block w-full text-left px-4 py-1 hover:bg-gray-100">ខ្មែរ</a>
-            <a href="?lang=zh" class="block w-full text-left px-4 py-1 hover:bg-gray-100">中国</a>
+            class="absolute right-0 md:right-[-56%] md:top-0 w-24 bg-white dark:bg-gray-800 dark:text-gray-200 rounded-lg overflow-hidden shadow-lg py-0 z-10 invisible group-hover:visible opacity-0 group-hover:opacity-100 transition">
+            <a href="?lang=en" class="block w-full text-left px-4 py-1 dark:hover:bg-gray-700 hover:bg-gray-200">English</a>
+            <a href="?lang=kh" class="block w-full text-left px-4 py-1 dark:hover:bg-gray-700 hover:bg-gray-200">ខ្មែរ</a>
+            <a href="?lang=zh" class="block w-full text-left px-4 py-1 dark:hover:bg-gray-700 hover:bg-gray-200">中国</a>
           </div>
         </div>
       </nav>

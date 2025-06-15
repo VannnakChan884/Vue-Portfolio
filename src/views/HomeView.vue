@@ -16,10 +16,9 @@
             Bridging technology and creativity to deliver seamless digital experiences and robust IT solutions.
           </p>
           <div class="grid grid-cols-2 lg:grid-cols-3 gap-4">
-            <RouterLink to="/project" class="bg-yellow-500 hover:bg-gray-700 transition text-white text-center p-3 rounded-lg inline-block">View Work</RouterLink>
-
+            <RouterLink to="/project" class="bg-yellow-500 hover:bg-gray-700 transition text-white text-center p-3 rounded-lg inline-block btn">View Work</RouterLink>
             <button id="downloadResume"
-              class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg flex items-center justify-center">
+              class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg flex items-center justify-center btn">
               <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
