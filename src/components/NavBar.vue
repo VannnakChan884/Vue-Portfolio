@@ -49,13 +49,15 @@ const toggleDark = useToggle(isDark);
           <i class="fa-solid fa-envelope text-base md:text-4xl"></i>
           <span class="text-[7px] md:text-sm">Contact</span>
         </RouterLink>
+
+        <!-- Mobile Screen -->
         <button @click="toggleDark()"
-          class="h-14 md:h-20 bg-green-400/50 hover:bg-green-600/50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:text-white/80 font-medium rounded-xl flex flex-col items-center justify-center transition">
+          class="md:hidden h-14 md:h-20 bg-green-400/50 hover:bg-green-600/50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:text-white/80 font-medium rounded-xl flex flex-col items-center justify-center transition">
           <span class="text-base md:text-4xl">
             {{ isDark ? "🌜" : "🔆" }}
           </span>
         </button>
-        <div class="h-14 md:h-20 relative group">
+        <div class="md:hidden h-14 md:h-20 relative group">
           <button
             class="h-full w-full bg-green-400/50 hover:bg-green-600/50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:text-white/80 font-medium rounded-xl flex flex-col items-center justify-center transition">
             <i class="fa-solid fa-language text-base md:text-4xl"></i>
@@ -68,6 +70,29 @@ const toggleDark = useToggle(isDark);
           </div>
         </div>
       </nav>
+      <hr class="hidden md:flex border border-gray-400/50 mt-4">
+
+      <!-- Desktop Screen -->
+      <div class="grid grid-cols-2 gap-2 md:mt-4">
+        <button @click="toggleDark()"
+          class="hidden md:flex h-14 md:h-20 bg-green-400/50 hover:bg-green-600/50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:text-white/80 font-medium rounded-xl flex flex-col items-center justify-center transition">
+          <span class="text-base md:text-4xl">
+            {{ isDark ? "🌜" : "🔆" }}
+          </span>
+        </button>
+        <div class="hidden md:flex h-14 md:h-20 relative group">
+          <button
+            class="h-full w-full bg-green-400/50 hover:bg-green-600/50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:text-white/80 font-medium rounded-xl flex flex-col items-center justify-center transition">
+            <i class="fa-solid fa-language text-base md:text-4xl"></i>
+          </button>
+          <div
+            class="absolute right-0 -top-24 md:top-20 md:left-0 w-24 bg-white dark:bg-gray-800 dark:text-gray-200 rounded-lg overflow-hidden shadow-lg py-0 z-10 invisible group-hover:visible opacity-0 group-hover:opacity-100 transition">
+            <a href="?lang=en" class="block w-full text-left px-4 py-1 dark:hover:bg-gray-700 hover:bg-gray-200">English</a>
+            <a href="?lang=kh" class="block w-full text-left px-4 py-1 dark:hover:bg-gray-700 hover:bg-gray-200">ខ្មែរ</a>
+            <a href="?lang=zh" class="block w-full text-left px-4 py-1 dark:hover:bg-gray-700 hover:bg-gray-200">中国</a>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
 </template>
