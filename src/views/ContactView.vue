@@ -28,7 +28,7 @@
                                 <div class="w-10 h-10 flex items-center justify-start">
                                     <i class="fa-solid fa-phone text-lg"></i>
                                 </div>
-                                <span class="text-sm">+855 96 26 65 240<br>+855 88 600 4544</span>
+                                <span class="text-sm no-underline">+855 96 26 65 240<br>+855 88 600 4544</span>
                             </div>
                             <div class="flex items-center">
                                 <div class="w-10 h-10 flex items-center justify-start">
