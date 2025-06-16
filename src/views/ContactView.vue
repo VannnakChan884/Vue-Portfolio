@@ -17,18 +17,30 @@
                             Information</h4>
                         <p class="max-w-full mx-auto mt-2 mb-4 text-justify text-sm text-gray-500 dark:text-gray-300">
                             I'll create high-quality linkable content and build at least 40 high-authority.</p>
-                        <div
-                            class="w-64 h-64 bg-gray-400/30 dark:bg-gray-600/40 blur-2xl absolute -bottom-20 -left-20 rounded-full">
-                        </div>
-                        <div
-                            class="w-48 h-48 bg-gray-400/30 dark:bg-gray-600/40 blur-2xl absolute -top-20 -right-20 rounded-full">
-                        </div>
-                        <div class="flex flex-col md:space-y-4 mt-6">
+                        <div class="flex flex-col md:space-y-2 mt-6 z-50">
                             <div class="flex items-center">
                                 <div class="w-10 h-10 flex items-center justify-start">
                                     <i class="fa-solid fa-phone text-lg"></i>
                                 </div>
                                 <span class="text-sm no-underline">(+855) 96 26 65 240<br>(+855) 88 600 4544</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 flex items-center justify-start">
+                                    <i class="fa-brands fa-telegram text-lg"></i>
+                                </div>
+                                <a href="https://t.me/vannak_IT" target="_blank">Vannak</a>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 flex items-center justify-start">
+                                    <i class="fa-brands fa-linkedin text-lg"></i>
+                                </div>
+                                <a href="https://www.linkedin.com/in/chan-vannak/" target="_blank">Chan Vannak</a>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 flex items-center justify-start">
+                                    <i class="fa-brands fa-github text-lg"></i>
+                                </div>
+                                <a href="https://github.com/VannnakChan884" target="_blank">Chan Vannak</a>
                             </div>
                             <div class="flex items-center">
                                 <div class="w-10 h-10 flex items-center justify-start">
@@ -43,8 +55,11 @@
                                 <span class="text-sm">Takeo, Cambodia</span>
                             </div>
                         </div>
+                        <div
+                            class="w-64 h-64 bg-gray-400/30 dark:bg-gray-600/40 blur-3xl absolute -bottom-20 -right-20 rounded-full z-10">
+                        </div>
                     </div>
-                    <form>
+                    <form class="my-8">
                         <div class="grid lg:grid-cols-2 gap-x-6">
                             <div class="mb-6">
                                 <label for="name" class="text-sm font-medium mb-1">Your Name</label>
