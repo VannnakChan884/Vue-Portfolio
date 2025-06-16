@@ -66,27 +66,27 @@
                         <div class="grid lg:grid-cols-2 gap-x-6">
                             <div class="mb-6">
                                 <label for="name" class="text-sm font-medium mb-1">Your Name</label>
-                                <input type="text" required placeholder="Your name here"
+                                <input type="text" id="name" name="name" placeholder="Your name here" required
                                     class="w-full pb-2 bg-transparent dark:bg-gray-700 dark:border-gray-600 border-b border-gray-300 focus:border-gray-500 dark:focus:border-gray-200 outline-none">
                             </div>
                             <div class="mb-6">
                                 <label for="email" class="text-sm font-medium mb-1">
                                     Your Email
                                 </label>
-                                <input type="email" required placeholder="example@gmail.com"
+                                <input type="email" id="email" name="email" placeholder="example@gmail.com" required
                                     class="w-full pb-2 bg-transparent dark:bg-gray-700 dark:border-gray-600 border-b border-gray-300 focus:border-gray-500 dark:focus:border-gray-200 outline-none">
                             </div>
                         </div>
                         <div class="mb-6">
                             <label for="subject" class="text-sm font-medium mb-1">Your Subject</label>
-                            <input type="text" required placeholder="Your subject here"
+                            <input type="text" name="subject" id="subject" placeholder="Your subject here" required
                                 class="w-full pb-2 bg-transparent dark:bg-gray-700 dark:border-gray-600 border-b border-gray-300 focus:border-gray-500 dark:focus:border-gray-200 outline-none">
                         </div>
                         <div class="mb-6">
                             <label for="message" class="text-sm font-medium mb-1">
                                 Your Message
                             </label>
-                            <textarea rows="4" required placeholder="Your message here"
+                            <textarea rows="4" id="message" name="message" placeholder="Your message here" required
                                 class="w-full pb-2 bg-transparent dark:bg-gray-700 dark:border-gray-600 border-b border-gray-300 focus:border-gray-500 dark:focus:border-gray-200 outline-none"></textarea>
                         </div>
                         <div>
