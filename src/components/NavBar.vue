@@ -6,7 +6,7 @@ const toggleDark = useToggle(isDark);
 </script>
 
 <template>
-  <header class="w-full h-[96vh] md:w-1/4 lg:w-1/5 xl:w-1/6 fixed md:top-4 bottom-0 md:p-4 z-50">
+  <header class="w-full md:h-[96vh] md:w-1/4 lg:w-1/5 xl:w-1/6 fixed md:top-4 bottom-0 md:p-4 z-50">
     <div
       class="w-full md:h-full p-2 flex flex-col absolute bottom-0 backdrop-blur-sm bg-gray-200/70 dark:bg-gray-800/70 rounded-t-2xl shadow-xl shadow-gray-800/30 md:rounded-b-2xl ">
       <div class="hidden md:flex">

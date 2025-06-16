@@ -1,6 +1,6 @@
 <template>
     <!-- Contact Section -->
-    <div class="absolute top-0 right-0 py-6 pb-24 w-full md:w-3/4 lg:w-4/5 xl:w-5/6 bg-white dark:bg-gray-900 px-6">
+    <div class="absolute top-0 right-0 py-6 pb-32 w-full md:w-3/4 lg:w-4/5 xl:w-5/6 bg-white dark:bg-gray-900 px-6">
         <div class="md:ml-6 lg:ml-6 xl:ml-6">
             <div class="max-w-4xl mx-auto mb-12">
                 <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-200 text-center">Get In Touch</h2>
@@ -12,6 +12,7 @@
             <div
                 class="max-w-4xl mx-auto bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300 p-3 rounded-2xl shadow-md">
                 <div class="grid md:grid-cols-2 gap-x-6 gap-y-6">
+                    <!-- Contact Info -->
                     <div class="relative bg-gray-100 dark:bg-gray-900 p-6 rounded-lg overflow-hidden">
                         <h4 class="text-xl font-bold text-gray-800 dark:text-gray-200">Contact
                             Information</h4>
@@ -59,6 +60,8 @@
                             class="w-64 h-64 bg-gray-400/30 dark:bg-gray-600/40 blur-3xl absolute -bottom-20 -right-20 rounded-full z-10">
                         </div>
                     </div>
+
+                    <!-- Contact Form -->
                     <form class="my-8">
                         <div class="grid lg:grid-cols-2 gap-x-6">
                             <div class="mb-6">
