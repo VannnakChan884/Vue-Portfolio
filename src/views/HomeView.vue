@@ -1,8 +1,8 @@
 <template>
   <!-- Hero Section -->
-  <div class="absolute right-0 w-full md:w-3/4 lg:w-4/5 xl:w-5/6 h-[92vh] md:h-[100vh] px-6 flex items-center justify-center bg-white dark:bg-gray-900">
+  <div class="absolute right-0 w-full md:flex justify-center items-center md:w-3/4 lg:w-4/5 xl:w-5/6 h-[92vh] md:h-[100vh] px-6 pt-6 bg-white dark:bg-gray-900">
     <div class="md:ml-4 lg:ml-6 xl:ml-0">
-      <div class="flex flex-col md:flex-row items-center">
+      <div class="flex flex-col md:flex-row items-center pb-24">
         <div class="md:w-1/2 mb-8 md:mb-0 flex justify-center">
           <div
             class="w-4/5 h-4/5 md:w-64 md:h-64 rounded-3xl overflow-hidden border-4 border-gray-300 dark:border-gray-800 shadow-lg">
