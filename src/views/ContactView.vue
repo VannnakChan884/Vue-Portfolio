@@ -1,7 +1,7 @@
 <template>
     <!-- Contact Section -->
     <div
-        class="absolute top-0 right-0 md:py-6 w-full md:w-3/4 lg:w-4/5 xl:w-5/6 bg-white dark:bg-gray-900 px-6">
+        class="absolute top-0 right-0 py-6 w-full md:w-3/4 lg:w-4/5 xl:w-5/6 bg-white dark:bg-gray-900 px-6">
         <div class="md:ml-6 lg:ml-6 xl:ml-6">
             <div class="max-w-2xl mx-auto bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300 p-6 rounded-2xl shadow-md">
                 <form class="space-y-6">

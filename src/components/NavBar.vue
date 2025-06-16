@@ -6,9 +6,9 @@ const toggleDark = useToggle(isDark);
 </script>
 
 <template>
-  <header
-    class="w-full md:w-1/4 lg:w-1/5 xl:w-1/6 fixed bottom-0 md:top-6 left-0 md:left-6 md:p-4 z-50">
-    <div class="h-full md:h-[91vh] overscroll-auto p-2 flex flex-col backdrop-blur-sm bg-gray-200/70 dark:bg-gray-800/70 rounded-t-2xl shadow-xl shadow-gray-800/30 md:rounded-b-2xl ">
+  <header class="w-full h-[96vh] md:w-1/4 lg:w-1/5 xl:w-1/6 fixed md:top-4 bottom-0 md:p-4 z-50">
+    <div
+      class="w-full md:h-full p-2 flex flex-col absolute bottom-0 backdrop-blur-sm bg-gray-200/70 dark:bg-gray-800/70 rounded-t-2xl shadow-xl shadow-gray-800/30 md:rounded-b-2xl ">
       <div class="hidden md:flex">
         <div class="w-full mx-auto">
           <div class="flex flex-col">
@@ -16,7 +16,9 @@ const toggleDark = useToggle(isDark);
               <img src="../assets/avatar.jpg" alt="Vannak's Profile Photo" class="w-full h-full object-cover">
             </div>
             <div class="text-center">
-              <h1 class="text-xl md:text-xl text-gray-700 dark:text-white/80 font-bold mt-2 uppercase mb-1">Chan Vannak</h1>
+              <h1 class="text-xl md:text-xl text-gray-700 dark:text-white/80 font-bold mt-2 uppercase mb-1">Chan
+                Vannak
+              </h1>
               <h2 class="text-xs text-gray-500 dark:text-white/70 mb-2">IT Support & Graphic Design</h2>
             </div>
           </div>
@@ -64,8 +66,10 @@ const toggleDark = useToggle(isDark);
           </button>
           <div
             class="absolute right-0 -top-24 md:top-20 md:left-0 w-24 bg-white dark:bg-gray-800 dark:text-gray-200 rounded-lg overflow-hidden shadow-lg py-0 z-10 invisible group-hover:visible opacity-0 group-hover:opacity-100 transition">
-            <a href="?lang=en" class="block w-full text-left px-4 py-1 dark:hover:bg-gray-700 hover:bg-gray-200">English</a>
-            <a href="?lang=kh" class="block w-full text-left px-4 py-1 dark:hover:bg-gray-700 hover:bg-gray-200">ខ្មែរ</a>
+            <a href="?lang=en"
+              class="block w-full text-left px-4 py-1 dark:hover:bg-gray-700 hover:bg-gray-200">English</a>
+            <a href="?lang=kh"
+              class="block w-full text-left px-4 py-1 dark:hover:bg-gray-700 hover:bg-gray-200">ខ្មែរ</a>
             <a href="?lang=zh" class="block w-full text-left px-4 py-1 dark:hover:bg-gray-700 hover:bg-gray-200">中国</a>
           </div>
         </div>
@@ -87,8 +91,10 @@ const toggleDark = useToggle(isDark);
           </button>
           <div
             class="absolute right-0 -top-24 md:top-20 md:left-0 w-24 bg-white dark:bg-gray-800 dark:text-gray-200 rounded-lg overflow-hidden shadow-lg py-0 z-10 invisible group-hover:visible opacity-0 group-hover:opacity-100 transition">
-            <a href="?lang=en" class="block w-full text-left px-4 py-1 dark:hover:bg-gray-700 hover:bg-gray-200">English</a>
-            <a href="?lang=kh" class="block w-full text-left px-4 py-1 dark:hover:bg-gray-700 hover:bg-gray-200">ខ្មែរ</a>
+            <a href="?lang=en"
+              class="block w-full text-left px-4 py-1 dark:hover:bg-gray-700 hover:bg-gray-200">English</a>
+            <a href="?lang=kh"
+              class="block w-full text-left px-4 py-1 dark:hover:bg-gray-700 hover:bg-gray-200">ខ្មែរ</a>
             <a href="?lang=zh" class="block w-full text-left px-4 py-1 dark:hover:bg-gray-700 hover:bg-gray-200">中国</a>
           </div>
         </div>
