@@ -11,6 +11,12 @@ const isOpen = ref(true);
 const toggleMenu = () => {
   isOpen.value = !isOpen.value;
 };
+
+const activeItem = ref('/') // Set default active item
+const setActiveItem = (path) => {
+  activeItem.value = path
+}
+
 </script>
 
 <template>
@@ -45,45 +51,59 @@ const toggleMenu = () => {
       <div class="overflow-x-hidden overflow-y-auto transition-all duration-300 ease-in-out"
         :class="{ 'max-h-0 md:max-h-full': !isOpen, 'max-h-screen': isOpen }">
         <nav class="grid grid-cols-7 md:grid-cols-1 gap-2 text-center md:mt-0">
-          <RouterLink to="/"
-            class="h-14 md:h-20 bg-green-400/50 hover:bg-green-600/50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:text-white/80 font-medium rounded-xl flex flex-col md:flex-row items-center justify-center transition"
-            :class="{ 'md:justify-start md:px-4': isOpen, 'md:justify-center': !isOpen }">
+          <RouterLink to="/" v-slot="{ isActive }" :class="[
+            'h-14 md:h-20 hover:bg-green-600/50 dark:hover:bg-gray-700 dark:text-white/80 font-medium rounded-xl flex flex-col md:flex-row items-center justify-center transition',
+            isOpen ? 'md:justify-start md:px-4' : 'md:justify-center',
+            isActive ? 'bg-red-600/70 dark:bg-blue-700' : 'bg-pink-400/50 dark:bg-white'
+          ]">
             <span class="md:w-12 md:h-12 flex items-center justify-center">
               <i class="fa-solid fa-house text-green-800 dark:text-green-500 text-base md:text-3xl lg:text-4xl"></i>
             </span>
             <span class="text-[7px] font-bold md:text-base lg:text-md xl:text-lg md:ml-2 transition-all duration-300"
               :class="{ 'opacity-0 md:opacity-0 md:w-0 md:ml-0': !isOpen, 'opacity-100 md:opacity-100 md:w-auto': isOpen }">Home</span>
           </RouterLink>
-          <RouterLink to="/about"
-            class="h-14 md:h-20 bg-green-400/50 hover:bg-green-600/50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:text-white/80 font-medium rounded-xl flex flex-col md:flex-row items-center justify-center transition"
-            :class="{ 'md:justify-start md:px-4': isOpen, 'md:justify-center': !isOpen }">
+
+          <RouterLink to="/about" v-slot="{ isActive }" :class="[
+            'h-14 md:h-20 hover:bg-green-600/50 dark:hover:bg-gray-700 dark:text-white/80 font-medium rounded-xl flex flex-col md:flex-row items-center justify-center transition',
+            isOpen ? 'md:justify-start md:px-4' : 'md:justify-center',
+            isActive ? 'bg-green-600/70 dark:bg-gray-700' : 'bg-green-400/50 dark:bg-gray-900'
+          ]">
             <span class="md:w-12 md:h-12 flex items-center justify-center">
               <i class="fa-solid fa-user text-base md:text-3xl lg:text-4xl"></i>
             </span>
             <span class="text-[7px] md:text-base lg:text-md xl:text-lg md:ml-2 transition-all duration-300"
               :class="{ 'opacity-0 md:opacity-0 md:w-0 md:ml-0': !isOpen, 'opacity-100 md:opacity-100 md:w-auto': isOpen }">About</span>
           </RouterLink>
-          <RouterLink to="/skill"
-            class="h-14 md:h-20 bg-green-400/50 hover:bg-green-600/50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:text-white/80 font-medium rounded-xl flex flex-col md:flex-row items-center justify-center transition"
-            :class="{ 'md:justify-start md:px-4': isOpen, 'md:justify-center': !isOpen }">
+
+          <RouterLink to="/skill" v-slot="{ isActive }" :class="[
+            'h-14 md:h-20 hover:bg-green-600/50 dark:hover:bg-gray-700 dark:text-white/80 font-medium rounded-xl flex flex-col md:flex-row items-center justify-center transition',
+            isOpen ? 'md:justify-start md:px-4' : 'md:justify-center',
+            isActive ? 'bg-green-600/70 dark:bg-gray-700' : 'bg-green-400/50 dark:bg-gray-900'
+          ]">
             <span class="md:w-12 md:h-12 flex items-center justify-center">
               <i class="fa-solid fa-pen-nib text-base md:text-3xl lg:text-4xl"></i>
             </span>
             <span class="text-[7px] md:text-base lg:text-md xl:text-lg md:ml-2 transition-all duration-300"
               :class="{ 'opacity-0 md:opacity-0 md:w-0 md:ml-0': !isOpen, 'opacity-100 md:opacity-100 md:w-auto': isOpen }">Skills</span>
           </RouterLink>
-          <RouterLink to="/project"
-            class="h-14 md:h-20 bg-green-400/50 hover:bg-green-600/50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:text-white/80 font-medium rounded-xl flex flex-col md:flex-row items-center justify-center transition"
-            :class="{ 'md:justify-start md:px-4': isOpen, 'md:justify-center': !isOpen }">
+
+          <RouterLink to="/project" v-slot="{ isActive }" :class="[
+            'h-14 md:h-20 hover:bg-green-600/50 dark:hover:bg-gray-700 dark:text-white/80 font-medium rounded-xl flex flex-col md:flex-row items-center justify-center transition',
+            isOpen ? 'md:justify-start md:px-4' : 'md:justify-center',
+            isActive ? 'bg-green-600/70 dark:bg-gray-700' : 'bg-green-400/50 dark:bg-gray-900'
+          ]">
             <span class="md:w-12 md:h-12 flex items-center justify-center">
               <i class="fa-solid fa-list-check text-base md:text-3xl lg:text-4xl"></i>
             </span>
             <span class="text-[7px] md:text-base lg:text-md xl:text-lg md:ml-2 transition-all duration-300"
               :class="{ 'opacity-0 md:opacity-0 md:w-0 md:ml-0': !isOpen, 'opacity-100 md:opacity-100 md:w-auto': isOpen }">Projects</span>
           </RouterLink>
-          <RouterLink to="/contact"
-            class="h-14 md:h-20 bg-green-400/50 hover:bg-green-600/50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:text-white/80 font-medium rounded-xl flex flex-col md:flex-row items-center justify-center transition"
-            :class="{ 'md:justify-start md:px-4': isOpen, 'md:justify-center': !isOpen }">
+
+          <RouterLink to="/contact" v-slot="{ isActive }" :class="[
+            'h-14 md:h-20 hover:bg-green-600/50 dark:hover:bg-gray-700 dark:text-white/80 font-medium rounded-xl flex flex-col md:flex-row items-center justify-center transition',
+            isOpen ? 'md:justify-start md:px-4' : 'md:justify-center',
+            isActive ? 'bg-green-600/70 dark:bg-gray-700' : 'bg-green-400/50 dark:bg-gray-900'
+          ]">
             <span class="md:w-12 md:h-12 flex items-center justify-center">
               <i class="fa-solid fa-envelope text-base md:text-3xl lg:text-4xl"></i>
             </span>
