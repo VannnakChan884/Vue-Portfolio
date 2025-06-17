@@ -7,7 +7,7 @@ const isDark = useDark();
 const toggleDark = useToggle(isDark);
 
 // Expand/Collapse navbar
-const isOpen = ref(false);
+const isOpen = ref(true);
 const toggleMenu = () => {
   isOpen.value = !isOpen.value;
 };
