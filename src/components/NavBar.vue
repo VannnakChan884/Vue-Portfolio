@@ -22,7 +22,7 @@ const toggleMenu = () => {
       <div class="md:hidden flex justify-between items-center mb-2">
         <h1 class="text-xl text-gray-700 dark:text-white/80 font-bold">Vannak</h1>
         <button @click="toggleMenu"
-          class="md:w-12 md:h-12 p-2 flex justify-center items-center hover:bg-gray-700 hover:dark:bg-white/80 hover:text-gray-200 text-gray-700 dark:text-white/80 hover:dark:text-gray-700 rounded-full transition duration-300 ease-in-out">
+          class="w-8 h-8 p-2 flex justify-center items-center hover:bg-gray-700/20 hover:dark:bg-white/80 text-gray-700 dark:text-white/80 hover:dark:text-gray-700 rounded-lg transition duration-300 ease-in-out">
           <i class="fa-solid" :class="isOpen ? 'fa-xmark' : 'fa-bars-staggered'"></i>
         </button>
       </div>

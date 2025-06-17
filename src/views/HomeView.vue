@@ -7,8 +7,16 @@ const texts = [
   "Web Development"
 ]
 
+const colorClasses = [
+  'text-yellow-600 dark:text-yellow-500',
+  'text-red-600 dark:text-red-500',
+  'text-green-600 dark:text-green-500'
+]
+
 const displayText = ref('')
 const textWidth = ref(0)
+const colorIndex = ref(0)
+
 let textIndex = 0
 let charIndex = 0
 let isDeleting = false
@@ -37,9 +45,10 @@ function typeEffect() {
   if (isDeleting && charIndex === 0) {
     isDeleting = false
     textIndex = (textIndex + 1) % texts.length
+    colorIndex.value = textIndex
   }
 
-  setTimeout(typeEffect, isDeleting ? 60 : 100)
+  setTimeout(typeEffect, isDeleting ? 60 : 120)
 }
 
 onMounted(() => {
@@ -55,7 +64,7 @@ onMounted(() => {
       <div class="flex flex-col md:flex-row space-x-6 items-center pb-24">
         <div class="mb-8 md:mb-0 flex justify-center">
           <div
-            class="w-4/5 h-4/5 md:w-56 md:h-56 rounded-3xl overflow-hidden border-4 border-gray-300 dark:border-gray-800 shadow-lg">
+            class="w-4/5 h-4/5 md:w-72 md:h-80 rounded-3xl overflow-hidden border-4 border-gray-300 dark:border-gray-800 shadow-lg">
             <img src="../assets/avatar.jpg" alt="Vannak's Profile Photo" class="w-full h-full object-cover">
           </div>
         </div>
@@ -64,23 +73,26 @@ onMounted(() => {
           <h1
             class="text-4xl text-gray-800 text-4xl md:text-3xl lg:text-5xl xl:text-6xl font-semibold text-gray-800 dark:text-gray-200">
             I'm
-            <mark class="font-bold px-1">Chan Vannak</mark>
+            <mark class="font-bold px-1 text-gray-700">Vannak</mark>
           </h1>
           <div class="text-lg md:text-md lg:text-2xl text-gray-700 dark:text-gray-300 my-2 font-medium">
             <span>My skills: </span>
-            <span class="font-bold text-green-700 uppercase" :style="{ width: textWidth + 'ch' }">
+            <span :class="['font-bold', 'animate-cursor', colorClasses[colorIndex]]"
+              :style="{ width: textWidth }">
               {{ displayText }}
             </span>
           </div>
           <p class="text-gray-800 dark:text-gray-300 mb-4 md:text-sm font-light text-justify">
             Bridging technology and creativity to deliver seamless digital experiences and robust IT solutions.
           </p>
-          <div class="grid grid-cols-2 lg:grid-cols-3 gap-4">
-            <RouterLink to="/project"
-              class="bg-yellow-500 hover:bg-gray-700 transition text-white text-center p-3 rounded-lg inline-block btn">
-              View Work</RouterLink>
+          <div class="flex flex-row gap-3">
+            <RouterLink to="/project/"
+              class="flex items-center justify-center border-2 border-yellow-500 hover:bg-yellow-600 text-yellow-500 hover:text-gray-200 px-4 py-2 rounded-lg btn transition">
+              <i class="fa-solid fa-eye mr-2"></i>
+              View Work
+            </RouterLink>
             <button id="downloadResume"
-              class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg flex items-center justify-center btn">
+              class="flex items-center justify-center border-2 border-green-500 hover:bg-green-600 text-green-500 hover:text-gray-200 px-4 py-2 rounded-lg btn transition">
               <i class="fa-solid fa-download mr-2"></i>
               Resume
             </button>
