@@ -100,7 +100,7 @@ const toggleMenu = () => {
                 :class="{ 'opacity-0 md:opacity-0 md:w-0': !isOpen, 'text-[7px] opacity-100 md:opacity-100 md:w-auto': isOpen }">Language</span>
             </button>
             <div
-              class="fixed right-16 -top-8 md:top-20 md:left-0 w-24 bg-white dark:bg-gray-800 dark:text-gray-200 rounded-lg overflow-hidden shadow-lg py-0 z-10 invisible group-hover:visible opacity-0 group-hover:opacity-100 transition">
+              class="fixed right-16 bottom-[60%] w-24 bg-white dark:bg-gray-800 dark:text-gray-200 rounded-lg overflow-hidden shadow-lg py-0 z-10 invisible group-hover:visible opacity-0 group-hover:opacity-100 transition">
               <a href="?lang=en"
                 class="block w-full text-left px-4 py-1 dark:hover:bg-gray-700 hover:bg-gray-200">English</a>
               <a href="?lang=kh"
