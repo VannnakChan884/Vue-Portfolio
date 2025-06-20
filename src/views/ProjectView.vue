@@ -35,64 +35,12 @@ onMounted(async () => {
             <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 <div v-for="project in projects" :key="project.id" class="project-card bg-gray-200 dark:bg-gray-700 rounded-lg overflow-hidden shadow-md">
                     <div class="md:h-64 overflow-hidden">
-                        <img v-if="project.image" :src='`/portfolio/admin/assets/uploads/${project.image}`' :alt="`${project.image}`"
+                        <img v-if="project.image" :src='`http://localhost/portfolio/admin/${project.image}`' :alt="`${project.image}`"
                             class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
                     </div>
                     <div class="p-4 md:h-full">
                         <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2">{{ project.title }}</h3>
                         <p class="text-gray-800 text-sm dark:text-gray-300 mb-3">{{ project.description}}</p>
-                        <a href="#" class="bg-gray-800 text-gray-200 dark:bg-white dark:text-gray-800 text-xs px-2 py-1 rounded">
-                            View
-                        </a>
-                    </div>
-                </div>
-                <div class="project-card bg-gray-200 dark:bg-gray-700 rounded-lg overflow-hidden shadow-md">
-                    <div class="md:h-64 overflow-hidden">
-                        <img src="../assets/avatar.jpg" alt="project title"
-                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
-                    </div>
-                    <div class="p-4 md:h-full">
-                        <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2">Title</h3>
-                        <p class="text-gray-800 text-sm dark:text-gray-300 mb-3">Description</p>
-                        <a href="#" class="bg-gray-800 text-gray-200 dark:bg-white dark:text-gray-800 text-xs px-2 py-1 rounded">
-                            View
-                        </a>
-                    </div>
-                </div>
-                <div class="project-card bg-gray-200 dark:bg-gray-700 rounded-lg overflow-hidden shadow-md">
-                    <div class="md:h-64 overflow-hidden">
-                        <img src="../assets/avatar.jpg" alt="project title"
-                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
-                    </div>
-                    <div class="p-4 md:h-full">
-                        <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2">Title</h3>
-                        <p class="text-gray-800 text-sm dark:text-gray-300 mb-3">Description</p>
-                        <a href="#" class="bg-gray-800 text-gray-200 dark:bg-white dark:text-gray-800 text-xs px-2 py-1 rounded">
-                            View
-                        </a>
-                    </div>
-                </div>
-                <div class="project-card bg-gray-200 dark:bg-gray-700 rounded-lg overflow-hidden shadow-md">
-                    <div class="md:h-64 overflow-hidden">
-                        <img src="../assets/avatar.jpg" alt="project title"
-                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
-                    </div>
-                    <div class="p-4 md:h-full">
-                        <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2">Title</h3>
-                        <p class="text-gray-800 text-sm dark:text-gray-300 mb-3">Description</p>
-                        <a href="#" class="bg-gray-800 text-gray-200 dark:bg-white dark:text-gray-800 text-xs px-2 py-1 rounded">
-                            View
-                        </a>
-                    </div>
-                </div>
-                <div class="project-card bg-gray-200 dark:bg-gray-700 rounded-lg overflow-hidden shadow-md">
-                    <div class="md:h-64 overflow-hidden">
-                        <img src="../assets/avatar.jpg" alt="project title"
-                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
-                    </div>
-                    <div class="p-4 md:h-full">
-                        <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2">Title</h3>
-                        <p class="text-gray-800 text-sm dark:text-gray-300 mb-3">Description</p>
                         <a href="#" class="bg-gray-800 text-gray-200 dark:bg-white dark:text-gray-800 text-xs px-2 py-1 rounded">
                             View
                         </a>
