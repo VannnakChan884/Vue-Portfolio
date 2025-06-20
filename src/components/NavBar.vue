@@ -1,22 +1,20 @@
 <script setup>
-import { useDark, useToggle } from "@vueuse/core"
 import { ref } from 'vue'
+import { useRoute } from 'vue-router'
+import { useDark, useToggle } from '@vueuse/core'
 
 // Dark mode theme
-const isDark = useDark();
-const toggleDark = useToggle(isDark);
+const isDark = useDark()
+const toggleDark = useToggle(isDark)
 
-// Expand/Collapse navbar
-const isOpen = ref(true);
+// Sidebar expand/collapse
+const isOpen = ref(true)
 const toggleMenu = () => {
-  isOpen.value = !isOpen.value;
-};
-
-const activeItem = ref('/') // Set default active item
-const setActiveItem = (path) => {
-  activeItem.value = path
+  isOpen.value = !isOpen.value
 }
 
+// Route detection
+const route = useRoute()
 </script>
 
 <template>
@@ -51,73 +49,71 @@ const setActiveItem = (path) => {
       <div class="overflow-x-hidden overflow-y-auto transition-all duration-300 ease-in-out"
         :class="{ 'max-h-0 md:max-h-full': !isOpen, 'max-h-screen': isOpen }">
         <nav class="grid grid-cols-7 md:grid-cols-1 gap-2 text-center md:mt-0">
-          <RouterLink to="/" v-slot="{ isActive }" :class="[
-            'h-14 md:h-20 hover:bg-green-600/50 dark:hover:bg-gray-700 dark:text-white/80 font-medium rounded-xl flex flex-col md:flex-row items-center justify-center transition',
+          <!-- Homepage -->
+          <RouterLink to="/" :class="[
+            baseClass,
             isOpen ? 'md:justify-start md:px-4' : 'md:justify-center',
-            isActive ? 'bg-red-600/70 dark:bg-blue-700' : 'bg-pink-400/50 dark:bg-white'
+            route.path === '/' ? activeClass : inactiveClass
           ]">
             <span class="md:w-12 md:h-12 flex items-center justify-center">
-              <i class="fa-solid fa-house text-green-800 dark:text-green-500 text-base md:text-3xl lg:text-4xl"></i>
+              <i class="fa-solid fa-house icon"></i>
             </span>
-            <span class="text-[7px] font-bold md:text-base lg:text-md xl:text-lg md:ml-2 transition-all duration-300"
-              :class="{ 'opacity-0 md:opacity-0 md:w-0 md:ml-0': !isOpen, 'opacity-100 md:opacity-100 md:w-auto': isOpen }">Home</span>
+            <span class="textVisibility" :class="isOpen ? 'visible' : 'hidden'">Home</span>
           </RouterLink>
 
-          <RouterLink to="/about" v-slot="{ isActive }" :class="[
-            'h-14 md:h-20 hover:bg-green-600/50 dark:hover:bg-gray-700 dark:text-white/80 font-medium rounded-xl flex flex-col md:flex-row items-center justify-center transition',
+          <!-- About page -->
+          <RouterLink to="/about" :class="[
+            baseClass,
             isOpen ? 'md:justify-start md:px-4' : 'md:justify-center',
-            isActive ? 'bg-green-600/70 dark:bg-gray-700' : 'bg-green-400/50 dark:bg-gray-900'
+            route.path === '/about' ? activeClass : inactiveClass
           ]">
             <span class="md:w-12 md:h-12 flex items-center justify-center">
-              <i class="fa-solid fa-user text-base md:text-3xl lg:text-4xl"></i>
+              <i class="fa-solid fa-user icon"></i>
             </span>
-            <span class="text-[7px] md:text-base lg:text-md xl:text-lg md:ml-2 transition-all duration-300"
-              :class="{ 'opacity-0 md:opacity-0 md:w-0 md:ml-0': !isOpen, 'opacity-100 md:opacity-100 md:w-auto': isOpen }">About</span>
+            <span class="textVisibility" :class="isOpen ? 'visible' : 'hidden'">About</span>
           </RouterLink>
 
-          <RouterLink to="/skill" v-slot="{ isActive }" :class="[
-            'h-14 md:h-20 hover:bg-green-600/50 dark:hover:bg-gray-700 dark:text-white/80 font-medium rounded-xl flex flex-col md:flex-row items-center justify-center transition',
+          <!-- Skill page -->
+          <RouterLink to="/skill" :class="[
+            baseClass,
             isOpen ? 'md:justify-start md:px-4' : 'md:justify-center',
-            isActive ? 'bg-green-600/70 dark:bg-gray-700' : 'bg-green-400/50 dark:bg-gray-900'
+            route.path === '/skill' ? activeClass : inactiveClass
           ]">
             <span class="md:w-12 md:h-12 flex items-center justify-center">
-              <i class="fa-solid fa-pen-nib text-base md:text-3xl lg:text-4xl"></i>
+              <i class="fa-solid fa-pen-nib icon"></i>
             </span>
-            <span class="text-[7px] md:text-base lg:text-md xl:text-lg md:ml-2 transition-all duration-300"
-              :class="{ 'opacity-0 md:opacity-0 md:w-0 md:ml-0': !isOpen, 'opacity-100 md:opacity-100 md:w-auto': isOpen }">Skills</span>
+            <span class="textVisibility" :class="isOpen ? 'visible' : 'hidden'">Skills</span>
           </RouterLink>
 
-          <RouterLink to="/project" v-slot="{ isActive }" :class="[
-            'h-14 md:h-20 hover:bg-green-600/50 dark:hover:bg-gray-700 dark:text-white/80 font-medium rounded-xl flex flex-col md:flex-row items-center justify-center transition',
+          <!-- Project page -->
+          <RouterLink to="/project" :class="[
+            baseClass,
             isOpen ? 'md:justify-start md:px-4' : 'md:justify-center',
-            isActive ? 'bg-green-600/70 dark:bg-gray-700' : 'bg-green-400/50 dark:bg-gray-900'
+            route.path === '/project' ? activeClass : inactiveClass
           ]">
             <span class="md:w-12 md:h-12 flex items-center justify-center">
-              <i class="fa-solid fa-list-check text-base md:text-3xl lg:text-4xl"></i>
+              <i class="fa-solid fa-list-check icon"></i>
             </span>
-            <span class="text-[7px] md:text-base lg:text-md xl:text-lg md:ml-2 transition-all duration-300"
-              :class="{ 'opacity-0 md:opacity-0 md:w-0 md:ml-0': !isOpen, 'opacity-100 md:opacity-100 md:w-auto': isOpen }">Projects</span>
+            <span class="textVisibility" :class="isOpen ? 'visible' : 'hidden'">Projects</span>
           </RouterLink>
 
-          <RouterLink to="/contact" v-slot="{ isActive }" :class="[
-            'h-14 md:h-20 hover:bg-green-600/50 dark:hover:bg-gray-700 dark:text-white/80 font-medium rounded-xl flex flex-col md:flex-row items-center justify-center transition',
+          <!-- Contact page -->
+          <RouterLink to="/contact" :class="[
+            baseClass,
             isOpen ? 'md:justify-start md:px-4' : 'md:justify-center',
-            isActive ? 'bg-green-600/70 dark:bg-gray-700' : 'bg-green-400/50 dark:bg-gray-900'
+            route.path === '/contact' ? activeClass : inactiveClass
           ]">
             <span class="md:w-12 md:h-12 flex items-center justify-center">
-              <i class="fa-solid fa-envelope text-base md:text-3xl lg:text-4xl"></i>
+              <i class="fa-solid fa-envelope icon"></i>
             </span>
-            <span class="text-[7px] md:text-base lg:text-md xl:text-lg md:ml-2 transition-all duration-300"
-              :class="{ 'opacity-0 md:opacity-0 md:w-0 md:ml-0': !isOpen, 'opacity-100 md:opacity-100 md:w-auto': isOpen }">Contact</span>
+            <span class="textVisibility" :class="isOpen ? 'visible' : 'hidden'">Contact</span>
           </RouterLink>
 
           <!-- Mobile Screen -->
           <div class="md:hidden h-14 md:h-20 relative group">
-            <button
-              class="h-full w-full bg-green-400/50 hover:bg-green-600/50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:text-white/80 font-medium rounded-xl flex flex-col items-center justify-center transition">
+            <button class="language-btn">
               <i class="fa-solid fa-language text-base md:text-4xl"></i>
-              <span class="md:ml-2 transition-all duration-300"
-                :class="{ 'opacity-0 md:opacity-0 md:w-0': !isOpen, 'text-[7px] opacity-100 md:opacity-100 md:w-auto': isOpen }">Language</span>
+              <span class="textVisibility" :class="isOpen ? 'visible' : 'hidden'">Language</span>
             </button>
             <div
               class="fixed right-16 bottom-[60%] w-24 bg-white dark:bg-gray-800 dark:text-gray-200 rounded-lg overflow-hidden shadow-lg py-0 z-10 invisible group-hover:visible opacity-0 group-hover:opacity-100 transition">
@@ -129,13 +125,11 @@ const setActiveItem = (path) => {
                 class="block w-full text-left px-4 py-1 dark:hover:bg-gray-700 hover:bg-gray-200">中国</a>
             </div>
           </div>
-          <button @click="toggleDark()"
-            class="md:hidden h-14 md:h-20 bg-green-400/50 hover:bg-green-600/50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:text-white/80 font-medium rounded-xl flex flex-col items-center justify-center transition">
+          <button @click="toggleDark()" class="theme-btn">
             <span class="text-base md:text-4xl">
               {{ isDark ? "🌜" : "🔆" }}
             </span>
-            <span class="md:ml-2 transition-all duration-300"
-              :class="{ 'opacity-0 md:opacity-0 md:w-0': !isOpen, 'text-[7px] opacity-100 md:opacity-100 md:w-auto': isOpen }">
+            <span class="textVisibility" :class="isOpen ? 'visible' : 'hidden'">
               {{ isDark ? "Dark" : "Light" }}
             </span>
           </button>
@@ -147,13 +141,12 @@ const setActiveItem = (path) => {
             <button @click="toggleDark()"
               class="hidden md:flex h-14 md:h-20 bg-green-400/50 hover:bg-green-600/50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:text-white/80 font-medium rounded-xl flex items-center justify-center transition"
               :class="{ 'md:justify-start md:px-4': isOpen, 'md:justify-center': !isOpen }">
-              <div class="md:w-12 md:h-12 flex items-center justify-center">
+              <div class="icon-box">
                 <span class="text-base md:text-3xl">
                   {{ isDark ? "🌜" : "🔆" }}
                 </span>
               </div>
-              <span class="ml-2 transition-all duration-300"
-                :class="{ 'opacity-0 md:opacity-0 md:w-0 md:ml-0': !isOpen, 'opacity-100 md:opacity-100 md:w-auto': isOpen }">
+              <span class="textVisibility" :class="isOpen ? 'visible' : 'hidden'">
                 {{ isDark ? "Dark" : "Light" }}
               </span>
             </button>
@@ -164,8 +157,7 @@ const setActiveItem = (path) => {
                 <span class="md:w-12 md:h-12 flex items-center justify-center">
                   <i class="fa-solid fa-language text-base md:text-3xl"></i>
                 </span>
-                <span class="ml-2 transition-all duration-300"
-                  :class="{ 'opacity-0 md:opacity-0 md:w-0 md:ml-0': !isOpen, 'opacity-100 md:opacity-100 md:w-auto': isOpen }">Language</span>
+                <span class="textVisibility" :class="isOpen ? 'visible' : 'hidden'">Language</span>
               </button>
               <div
                 class="fixed -right-[25%] bottom-[17%] w-24 bg-white dark:bg-gray-800 dark:text-gray-200 rounded-lg overflow-hidden shadow-lg py-0 z-10 invisible group-hover:visible opacity-0 group-hover:opacity-100 transition">
@@ -183,3 +175,39 @@ const setActiveItem = (path) => {
     </div>
   </header>
 </template>
+
+<script>
+const baseClass = 'h-14 md:h-20 hover:bg-green-600/50 dark:hover:bg-gray-700 dark:text-white/80 font-medium rounded-xl flex flex-col md:flex-row items-center justify-center transition';
+const activeClass = 'bg-green-600/70 dark:bg-gray-700';
+const inactiveClass = 'bg-green-400/50 dark:bg-gray-900';
+</script>
+
+<style scoped>
+.icon-box {
+  @apply md:w-12 md:h-12 flex items-center justify-center;
+}
+
+.icon {
+  @apply text-green-800 dark:text-green-500 text-base md:text-3xl lg:text-4xl;
+}
+
+.textVisibility {
+  @apply text-[7px] md:text-base lg:text-lg xl:text-xl md:ml-2 transition-all duration-300;
+}
+
+.textVisibility.hidden {
+  @apply opacity-0 md:opacity-0 md:w-0 md:ml-0;
+}
+
+.textVisibility.visible {
+  @apply opacity-100 md:opacity-100 md:w-auto;
+}
+
+.language-btn {
+  @apply h-full w-full bg-green-400/50 hover:bg-green-600/50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:text-white/80 font-medium rounded-xl flex flex-col items-center justify-center transition;
+}
+
+.theme-btn {
+  @apply md:hidden h-14 md:h-20 bg-green-400/50 hover:bg-green-600/50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:text-white/80 font-medium rounded-xl flex flex-col items-center justify-center transition;
+}
+</style>
