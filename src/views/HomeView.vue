@@ -1,4 +1,5 @@
 <script setup>
+import axios from 'axios'
 import { ref, onMounted } from 'vue'
 
 const texts = [
@@ -16,6 +17,11 @@ const colorClasses = [
 const displayText = ref('')
 const textWidth = ref(0)
 const colorIndex = ref(0)
+const home = ref([])
+const isLoading = ref(true)
+const error = ref(null)
+
+const lang = 'en' // Or get it from your store/route
 
 let textIndex = 0
 let charIndex = 0
@@ -51,8 +57,18 @@ function typeEffect() {
   setTimeout(typeEffect, isDeleting ? 60 : 120)
 }
 
-onMounted(() => {
+onMounted(async () => {
   typeEffect()
+  try {
+    const res = await axios.get(`http://localhost:81/portfolio-backend/api/home.php`, {
+      params: { lang }
+    })
+    home.value = res.data
+  } catch (err) {
+    error.value = err.message
+  } finally {
+    isLoading.value = false
+  }
 })
 </script>
 
@@ -60,20 +76,23 @@ onMounted(() => {
   <!-- Hero Section -->
   <div
     class="absolute right-0 w-full md:flex justify-center items-center md:w-3/4 lg:w-4/5 xl:w-5/6 h-[92vh] md:h-[100vh] px-6 pt-6 bg-white dark:bg-gray-900">
-    <div class="md:ml-12 lg:ml-6 xl:ml-0">
-      <div class="flex flex-col md:flex-row space-x-6 items-center pb-24">
+    <div v-if="isLoading">Loading...</div>
+    <div v-else-if="error" class="text-red-600">Error: {{ error }}</div>
+    <div v-else class="md:ml-12 lg:ml-6 xl:ml-0"> 
+      <div v-for="home_view in home" :key="home_view.id" class="flex flex-col md:flex-row space-x-6 items-center pb-24">
         <div class="mb-8 md:mb-0 flex justify-center">
+          
           <div
             class="w-4/5 h-4/5 md:w-72 md:h-80 rounded-3xl overflow-hidden border-4 border-gray-300 dark:border-gray-800 shadow-lg">
-            <img src="../assets/avatar.jpg" alt="Vannak's Profile Photo" class="w-full h-full object-cover">
+            <img v-if="home_view.profile_image" :src="`http://localhost:81/portfolio-backend/${home_view.profile_image}`" :alt="`${home_view.profile_image}`" class="w-full h-full object-cover">
           </div>
         </div>
-        <div class="text-left">
+        <div  class="text-left">
           <h1 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-1">Hello,</h1>
           <h1
-            class="text-4xl text-gray-800 text-4xl md:text-3xl lg:text-5xl xl:text-6xl font-semibold text-gray-800 dark:text-gray-200">
+            class="text-gray-800 text-4xl md:text-3xl lg:text-5xl xl:text-6xl font-semibold dark:text-gray-200">
             I'm
-            <mark class="font-bold px-1 text-gray-700">Vannak</mark>
+            <mark class="font-bold px-1 text-gray-700">{{ home_view.name }}</mark>
           </h1>
           <div class="text-lg md:text-md lg:text-2xl text-gray-700 dark:text-gray-300 my-2 font-medium">
             <span>My skills: </span>
