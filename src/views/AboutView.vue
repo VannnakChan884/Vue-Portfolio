@@ -34,7 +34,7 @@ const saveOrder = async (aboutId, experiences) => {
       <h2 class="text-gray-800 dark:text-gray-200 text-3xl font-bold text-center uppercase mb-8">
         About
       </h2>
-      <div class="flex flex-col md:flex-row space-x-24">
+      <div class="flex flex-col md:flex-row space-x-8">
         <!-- Education & Career -->
         <div v-for="about in aboutList" :key="about.id" class="md:w-1/2 mb-8 md:mb-0">
           <h3 class="text-xl dark:text-gray-200 font-semibold mb-4">
