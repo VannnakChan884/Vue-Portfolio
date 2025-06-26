@@ -51,11 +51,11 @@ const saveOrder = async (aboutId, experiences) => {
                     {{ exp.title }} at {{ exp.company }}
                   </h3>
                   <small class="text-gray-500 dark:text-gray-400">
-                    {{ exp.start_date }} → {{ exp.end_date || "Present" }}
+                    {{ exp.start_date }} → {{ (!exp.end_date || exp.end_date === '0000-00-00') ? 'Present' : exp.end_date }}
                   </small>
-                  <p class="text-gray-600 dark:text-gray-300">
-                    {{ exp.description }}
-                  </p>
+
+                  <!-- Fetch description with format text -->
+                  <p class="text-sm text-gray-600 dark:text-gray-300 text-justify" v-html="exp.description.replace(/\n/g, '<br>')"></p>
                 </div>
               </div>
             </template>
