@@ -1,3 +1,34 @@
+<script setup>
+import { ref } from 'vue'
+import axios from 'axios'
+
+const name = ref('')
+const email = ref('')
+const subject = ref('')
+const message = ref('')
+const successMsg = ref('')
+const errorMsg = ref('')
+
+const sendMessage = async () => {
+    try {
+        const response = await axios.post('http://localhost/portfolio-backend/api/send-message.php', {
+            name: name.value,
+            email: email.value,
+            subject: subject.value,
+            message: message.value
+        })
+        if (response.data.success) {
+            successMsg.value = response.data.message
+            name.value = email.value = subject.value = message.value = ''
+        } else {
+            errorMsg.value = response.data.message
+        }
+    } catch (err) {
+        console.error('Axios error:', err.response?.data || err.message)
+        errorMsg.value = 'An error occurred. Please try again.'
+    }
+}
+</script>
 <template>
     <!-- Contact Section -->
     <div class="absolute top-0 right-0 py-6 pb-32 w-full md:w-3/4 lg:w-4/5 xl:w-5/6 bg-white dark:bg-gray-900 px-6">
@@ -62,31 +93,36 @@
                     </div>
 
                     <!-- Contact Form -->
-                    <form class="my-8">
+                    <form @submit.prevent="sendMessage" class="my-8">
+                        
                         <div class="grid lg:grid-cols-2 gap-x-6">
                             <div class="mb-6">
                                 <label for="name" class="text-sm font-medium mb-1">Your Name</label>
-                                <input type="text" id="name" name="name" placeholder="Your name here" required
+                                <input v-model="name" type="text" id="name" name="name" placeholder="Your name here"
+                                    required
                                     class="w-full pb-2 bg-transparent dark:bg-gray-700 dark:border-gray-600 border-b border-gray-300 focus:border-gray-500 dark:focus:border-gray-200 outline-none">
                             </div>
                             <div class="mb-6">
                                 <label for="email" class="text-sm font-medium mb-1">
                                     Your Email
                                 </label>
-                                <input type="email" id="email" name="email" placeholder="example@gmail.com" required
+                                <input v-model="email" type="email" id="email" name="email"
+                                    placeholder="example@gmail.com" required
                                     class="w-full pb-2 bg-transparent dark:bg-gray-700 dark:border-gray-600 border-b border-gray-300 focus:border-gray-500 dark:focus:border-gray-200 outline-none">
                             </div>
                         </div>
                         <div class="mb-6">
                             <label for="subject" class="text-sm font-medium mb-1">Your Subject</label>
-                            <input type="text" name="subject" id="subject" placeholder="Your subject here" required
+                            <input v-model="subject" type="text" name="subject" id="subject"
+                                placeholder="Your subject here" required
                                 class="w-full pb-2 bg-transparent dark:bg-gray-700 dark:border-gray-600 border-b border-gray-300 focus:border-gray-500 dark:focus:border-gray-200 outline-none">
                         </div>
                         <div class="mb-6">
                             <label for="message" class="text-sm font-medium mb-1">
                                 Your Message
                             </label>
-                            <textarea rows="4" id="message" name="message" placeholder="Your message here" required
+                            <textarea v-model="message" rows="4" id="message" name="message"
+                                placeholder="Your message here" required
                                 class="w-full pb-2 bg-transparent dark:bg-gray-700 dark:border-gray-600 border-b border-gray-300 focus:border-gray-500 dark:focus:border-gray-200 outline-none"></textarea>
                         </div>
                         <div>
@@ -94,6 +130,10 @@
                                 class="w-full bg-gray-800 hover:bg-blue-700 dark:bg-gray-900 dark:hover:bg-gray-800 text-gray-200 font-medium py-3 px-4 rounded-md btn">
                                 Send Message
                             </button>
+                        </div>
+                        <div class="mt-4">
+                            <p class="text-green-600 mt-2" v-if="successMsg">{{ successMsg }}</p>
+                            <p class="text-red-600 mt-2" v-if="errorMsg">{{ errorMsg }}</p>
                         </div>
                     </form>
                 </div>
